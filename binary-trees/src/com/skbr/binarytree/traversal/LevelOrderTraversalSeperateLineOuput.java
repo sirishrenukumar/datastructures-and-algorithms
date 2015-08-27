@@ -50,8 +50,15 @@ public class LevelOrderTraversalSeperateLineOuput {
 
 	public static void main(String[] args) {
 
-		BinaryTree binaryTree = BinaryTreeFactory.getPerfectBinaryTree();
-		levelOrderTraversal(binaryTree.getRoot());
+		System.out.println("");
+		System.out.println("7-node skewed");
+		levelOrderTraversal(BinaryTreeFactory.getSevenNodeSkewedBinaryTree().getRoot());
+		System.out.println("");
+		System.out.println("7-node perfect");
+		levelOrderTraversal(BinaryTreeFactory.getSevenNodesPerfectBinaryTree().getRoot());
+		System.out.println("");
+		System.out.println("15-node perfect");
+		levelOrderTraversal(BinaryTreeFactory.getPerfectBinaryTree().getRoot());
 
 	}
 

@@ -83,8 +83,16 @@ public class ViewFromBottom {
 	
 	public static void main(String[] args) {
 
-		BinaryTree binaryTree = BinaryTreeFactory.getPerfectBinaryTree();
-		bottomView(binaryTree.getRoot());
+		System.out.println("");
+		System.out.println("7-node skewed");
+		bottomView(BinaryTreeFactory.getSevenNodeSkewedBinaryTree().getRoot());
+		System.out.println("");
+		System.out.println("7-node perfect");
+		bottomView(BinaryTreeFactory.getSevenNodesPerfectBinaryTree().getRoot());
+		System.out.println("");
+		System.out.println("15-node perfect");
+		bottomView(BinaryTreeFactory.getPerfectBinaryTree().getRoot());
+
 	}
 
 }

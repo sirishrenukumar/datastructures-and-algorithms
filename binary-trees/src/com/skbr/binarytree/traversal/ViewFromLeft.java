@@ -54,11 +54,16 @@ public class ViewFromLeft {
 
 	public static void main(String[] args) {
 
+
+		System.out.println("");
 		System.out.println("7-node skewed");
 		leftView(BinaryTreeFactory.getSevenNodeSkewedBinaryTree().getRoot());
+		System.out.println("");
 		System.out.println("7-node perfect");
 		leftView(BinaryTreeFactory.getSevenNodesPerfectBinaryTree().getRoot());
+		System.out.println("");
 		System.out.println("15-node perfect");
 		leftView(BinaryTreeFactory.getPerfectBinaryTree().getRoot());
-	}
+
+		}
 }

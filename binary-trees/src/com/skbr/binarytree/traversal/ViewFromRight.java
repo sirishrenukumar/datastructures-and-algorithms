@@ -24,7 +24,10 @@ public class ViewFromRight {
 			int nodeCount = queue.size();
 			while(nodeCount > 0) {
 				Node current = queue.remove();
-				
+		
+				/*
+				 * Last node at the level should be printed
+				 */
 				if(nodeCount == 1) {
 					System.out.print(current + "->");
 				}
@@ -52,11 +55,16 @@ public class ViewFromRight {
 
 	public static void main(String[] args) {
 
+
+		System.out.println("");
 		System.out.println("7-node skewed");
 		rightView(BinaryTreeFactory.getSevenNodeSkewedBinaryTree().getRoot());
+		System.out.println("");
 		System.out.println("7-node perfect");
 		rightView(BinaryTreeFactory.getSevenNodesPerfectBinaryTree().getRoot());
+		System.out.println("");
 		System.out.println("15-node perfect");
 		rightView(BinaryTreeFactory.getPerfectBinaryTree().getRoot());
-	}
+
+		}
 }

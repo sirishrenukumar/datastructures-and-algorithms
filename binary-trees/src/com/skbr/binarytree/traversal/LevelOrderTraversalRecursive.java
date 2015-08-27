@@ -25,7 +25,15 @@ public class LevelOrderTraversalRecursive {
 	}
 	public static void main(String[] args) {
 
-		BinaryTree binaryTree = BinaryTreeFactory.getPerfectBinaryTree();
-		levelOrderTraversal(binaryTree);
+		System.out.println("");
+		System.out.println("7-node skewed");
+		levelOrderTraversal(BinaryTreeFactory.getSevenNodeSkewedBinaryTree());
+		System.out.println("");
+		System.out.println("7-node perfect");
+		levelOrderTraversal(BinaryTreeFactory.getSevenNodesPerfectBinaryTree());
+		System.out.println("");
+		System.out.println("15-node perfect");
+		levelOrderTraversal(BinaryTreeFactory.getPerfectBinaryTree());
+
 	}
 }
