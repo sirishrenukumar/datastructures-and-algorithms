@@ -62,5 +62,16 @@ public class BinaryTreeFactory {
 
 		return binaryTree;
 	}
+	public static BinaryTree getSevenNodeSkewedBinaryTree() {
+		BinaryTree binaryTree = new BinaryTree(1);
+		Node root = binaryTree.getRoot();
+		Node two = binaryTree.insertLeft(root, 2);
+		Node three = binaryTree.insertRight(two, 3);
+		Node four = binaryTree.insertLeft(three, 4);
+		Node five = binaryTree.insertRight(four, 5);
+		Node six = binaryTree.insertLeft(five, 6);
+		Node seven = binaryTree.insertRight(six, 7);
+		return binaryTree;
+	}
 
 }
