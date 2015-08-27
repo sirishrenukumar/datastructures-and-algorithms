@@ -5,7 +5,6 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.TreeMap;
 
-import com.skbr.binarytree.BinaryTree;
 import com.skbr.binarytree.BinaryTree.Node;
 import com.skbr.binarytree.BinaryTreeFactory;
 

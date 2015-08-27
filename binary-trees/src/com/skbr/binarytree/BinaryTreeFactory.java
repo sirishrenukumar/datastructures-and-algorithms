@@ -70,7 +70,7 @@ public class BinaryTreeFactory {
 		Node four = binaryTree.insertLeft(three, 4);
 		Node five = binaryTree.insertLeft(four, 5);
 		Node six = binaryTree.insertLeft(five, 6);
-		Node seven = binaryTree.insertLeft(six, 7);
+		binaryTree.insertLeft(six, 7);
 		return binaryTree;
 	}
 
