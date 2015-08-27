@@ -18,6 +18,22 @@ public class BinaryTreeFactory {
 		return binaryTree;
 	}
 
+	public static BinaryTree getSevenNodesPerfectBinaryTree() {
+		BinaryTree binaryTree = new BinaryTree(1);
+		Node root = binaryTree.getRoot();
+
+		Node two = binaryTree.insertLeft(root, 2);
+		Node three = binaryTree.insertRight(root, 3);
+
+		binaryTree.insertLeft(two, 4);
+		binaryTree.insertRight(two, 5);
+
+		binaryTree.insertLeft(three, 6);
+		binaryTree.insertRight(three, 7);
+
+		return binaryTree;
+	}
+
 	public static BinaryTree getPerfectBinaryTree() {
 
 		BinaryTree binaryTree = new BinaryTree(1);
@@ -43,7 +59,7 @@ public class BinaryTreeFactory {
 
 		binaryTree.insertLeft(seven, 14);
 		binaryTree.insertRight(seven, 15);
-		
+
 		return binaryTree;
 	}
 
