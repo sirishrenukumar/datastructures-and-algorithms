@@ -1,4 +1,4 @@
-package com.skbr.binarytree.traversal;
+package com.skbr.binarytree.bfs.traversal;
 
 import com.skbr.binarytree.BinaryTree;
 import com.skbr.binarytree.BinaryTree.Node;

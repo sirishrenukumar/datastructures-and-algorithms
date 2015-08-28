@@ -1,4 +1,4 @@
-package com.skbr.binarytree.traversal;
+package com.skbr.binarytree.bfs.traversal;
 
 import java.util.LinkedList;
 import java.util.Queue;

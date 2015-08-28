@@ -1,4 +1,4 @@
-package com.skbr.binarytree.traversal;
+package com.skbr.binarytree.bfs.traversal.problems;
 
 import java.util.LinkedList;
 import java.util.Map;
@@ -8,7 +8,7 @@ import java.util.TreeMap;
 import com.skbr.binarytree.BinaryTree.Node;
 import com.skbr.binarytree.BinaryTreeFactory;
 
-public class ViewFromTop {
+public class ViewFromBottom {
 
 	private static class QueueItem {
 		private Node node;
@@ -29,14 +29,14 @@ public class ViewFromTop {
 		}
 	}
 
-	private static void topView(Node root) {
+	private static void bottomView(Node root) {
 
 		/*
 		 * - Logic is to do a Level order/BFS traversal of the tree - At each
 		 * node, compute the horizontal distance (HD) of the node from the
-		 * origin i.e the line that passes through the entire tree root. - Only
-		 * add the first node for each distinct value of the HD. - The rest of
-		 * the nodes with the same HD occur below this node and will be hidden -
+		 * origin i.e the line that passes through the entire tree root. - Keep adding
+		 * and nodes into a map (HD as the key) to ensure that only the last is retained
+		 * - The rest of the nodes with the same HD occur below this node and will be hidden -
 		 * HD of left child is HD of node - 1 and HD of right child is HD of node
 		 * + 1
 		 */
@@ -56,13 +56,8 @@ public class ViewFromTop {
 			QueueItem queueItem = queue.remove();
 			Node current = queueItem.getNode();
 			int hd = queueItem.getHd();
-
-			/*
-			 * If this HD is the first to be encountered, this is a top node and hence will be displayed
-			 */
-			if (!map.containsKey(hd)) {
-				map.put(hd, current);
-			}
+			
+			map.put(hd, current);
 
 			/*
 			 * Add the left child of the current node if present and pass HD - 1
@@ -77,24 +72,26 @@ public class ViewFromTop {
 			if (current.getRight() != null) {
 				queue.add(new QueueItem(current.getRight(), hd + 1));
 			}
+
 		}
+		
 		for(Map.Entry<Integer, Node> entry: map.entrySet()) {
 			System.out.print(entry.getValue() + "->");
 		}
 	}
-
+	
 	public static void main(String[] args) {
-
 
 		System.out.println("");
 		System.out.println("7-node skewed");
-		topView(BinaryTreeFactory.getSevenNodeSkewedBinaryTree().getRoot());
+		bottomView(BinaryTreeFactory.getSevenNodeSkewedBinaryTree().getRoot());
 		System.out.println("");
 		System.out.println("7-node perfect");
-		topView(BinaryTreeFactory.getSevenNodesPerfectBinaryTree().getRoot());
+		bottomView(BinaryTreeFactory.getSevenNodesPerfectBinaryTree().getRoot());
 		System.out.println("");
 		System.out.println("15-node perfect");
-		topView(BinaryTreeFactory.getPerfectBinaryTree().getRoot());
+		bottomView(BinaryTreeFactory.getPerfectBinaryTree().getRoot());
 
-		}
+	}
+
 }

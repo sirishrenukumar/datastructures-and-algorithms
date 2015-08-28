@@ -1,4 +1,4 @@
-package com.skbr.binarytree.traversal;
+package com.skbr.binarytree.bfs.traversal.problems;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -6,9 +6,9 @@ import java.util.Queue;
 import com.skbr.binarytree.BinaryTree.Node;
 import com.skbr.binarytree.BinaryTreeFactory;
 
-public class ViewFromRight {
+public class ViewFromLeft {
 
-		private static void rightView(Node root) {
+		private static void leftView(Node root) {
 		
 		Queue<Node> queue = new LinkedList<Node>();
 		
@@ -22,14 +22,13 @@ public class ViewFromRight {
 			 * All the nodes in the queue at the start of the loop are at the same level
 			 */
 			int nodeCount = queue.size();
+			boolean firstNodeInLevel = true;
 			while(nodeCount > 0) {
 				Node current = queue.remove();
-		
-				/*
-				 * Last node at the level should be printed
-				 */
-				if(nodeCount == 1) {
+				
+				if(firstNodeInLevel) {
 					System.out.print(current + "->");
+					firstNodeInLevel = !firstNodeInLevel;
 				}
 					
 				
@@ -58,13 +57,13 @@ public class ViewFromRight {
 
 		System.out.println("");
 		System.out.println("7-node skewed");
-		rightView(BinaryTreeFactory.getSevenNodeSkewedBinaryTree().getRoot());
+		leftView(BinaryTreeFactory.getSevenNodeSkewedBinaryTree().getRoot());
 		System.out.println("");
 		System.out.println("7-node perfect");
-		rightView(BinaryTreeFactory.getSevenNodesPerfectBinaryTree().getRoot());
+		leftView(BinaryTreeFactory.getSevenNodesPerfectBinaryTree().getRoot());
 		System.out.println("");
 		System.out.println("15-node perfect");
-		rightView(BinaryTreeFactory.getPerfectBinaryTree().getRoot());
+		leftView(BinaryTreeFactory.getPerfectBinaryTree().getRoot());
 
 		}
 }
