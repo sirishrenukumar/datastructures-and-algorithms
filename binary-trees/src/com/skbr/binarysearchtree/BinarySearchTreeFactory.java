@@ -20,4 +20,15 @@ public class BinarySearchTreeFactory {
 		
 		return binarySearchTree;
 	}
+	
+	public static BinarySearchTree getBinarySearchTree(int [] data) {
+		
+		BinarySearchTree binarySearchTree = new BinarySearchTree(data[0]);
+		
+		for(int i = 1; i < data.length; ++i) {
+			binarySearchTree.insert(data[i]);
+		}
+
+		return binarySearchTree;
+	}
 }

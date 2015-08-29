@@ -1,5 +1,8 @@
 package com.skbr.binarysearchtree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree {
 
 	static class Node {
@@ -26,7 +29,7 @@ public class BinarySearchTree {
 
 		@Override
 		public String toString() {
-			return "Node [" + data + "]";
+			return "[" + data + "]";
 		}
 	}
 
@@ -34,6 +37,10 @@ public class BinarySearchTree {
 
 	public BinarySearchTree(int data){
 		insert(data);
+	}
+	
+	public Node getRoot() {
+		return root;
 	}
 	public void insert(int data) {
 		root = insert(root, data);
@@ -56,6 +63,32 @@ public class BinarySearchTree {
 	}
 	public void preorder() {
 		preorder(root);
+	}
+	public void levelOrder() {
+		
+		Queue<Node> queue = new LinkedList<Node>();
+		
+		if(root!=null)
+			queue.add(root);
+		
+		while(!queue.isEmpty()) {
+			
+			int nodeCount = queue.size();
+			
+			while(nodeCount > 0) {
+				Node current = queue.remove();
+				System.out.print(current + ",");
+				
+				if(current.left!= null)
+					queue.add(current.left);
+				
+				if(current.right!= null)
+					queue.add(current.right);
+
+				--nodeCount;
+			}
+			System.out.println("");
+		}
 	}
 	
 
