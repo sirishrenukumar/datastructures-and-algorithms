@@ -130,22 +130,33 @@ public class BinaryTree {
 	public void preorder() {
 		preorder(root);
 	}
-	
+	public void postorder() {
+		postorder(root);
+	}
 
 	private void inorder(Node root) {
 		if (root == null)
 			return;
 		inorder(root.left);
-		System.out.print(root + ", ");
+		System.out.print(root + ",");
 		inorder(root.right);
 	}
 
 	private void preorder(Node root) {
 		if (root == null)
 			return;
-		System.out.println(root);
+		System.out.print(root + ",");
 		preorder(root.left);
 		preorder(root.right);
 	}
+	
+	private void postorder(Node root) {
+		if (root == null)
+			return;
+		postorder(root.left);
+		postorder(root.right);
+		System.out.print(root + ",");
+	}
+	
 
 }

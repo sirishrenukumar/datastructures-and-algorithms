@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class BinarySearchTree {
 
-	static class Node {
+	public static class Node {
 		private int data;
 		private Node left;
 		private Node right;
@@ -64,6 +64,9 @@ public class BinarySearchTree {
 	public void preorder() {
 		preorder(root);
 	}
+	public void postorder() {
+		postorder(root);
+	}
 	public void levelOrder() {
 		
 		Queue<Node> queue = new LinkedList<Node>();
@@ -96,16 +99,24 @@ public class BinarySearchTree {
 		if (root == null)
 			return;
 		inorder(root.left);
-		System.out.print(root + ", ");
+		System.out.print(root + ",");
 		inorder(root.right);
 	}
 
 	private void preorder(Node root) {
 		if (root == null)
 			return;
-		System.out.println(root);
+		System.out.print(root + ",");
 		preorder(root.left);
 		preorder(root.right);
+	}
+
+	private void postorder(Node root) {
+		if (root == null)
+			return;
+		postorder(root.left);
+		postorder(root.right);
+		System.out.print(root + ",");
 	}
 
 }
