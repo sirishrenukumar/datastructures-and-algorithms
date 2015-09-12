@@ -1,4 +1,4 @@
-package com.skbr.binarytree.bfs.traversal;
+package com.skbr.binarytree.dfs.traversal;
 
 import java.util.Stack;
 
