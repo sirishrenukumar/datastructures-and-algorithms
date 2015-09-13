@@ -6,27 +6,34 @@ import com.skbr.binarytree.BinaryTree;
 import com.skbr.binarytree.BinaryTree.Node;
 import com.skbr.binarytree.BinaryTreeFactory;
 
-public class PreOrderIterative {
+public class PostOrderTraversalIterative {
 	
-	private static void preorderIterative(Node root) {
+	private static void postorderIterative(Node root) {
 		
 		if(root == null)
 			return;
 		
-		Stack<Node> stack = new Stack<Node>();
+		Stack<Node> stack1 = new Stack<Node>();
+		Stack<Node> stack2 = new Stack<Node>();
 		Node current = root;
 		
-		stack.push(current);
-		while(!stack.isEmpty()) {
+		stack1.push(current);
+		while(!stack1.isEmpty()) {
 			
-			current = stack.pop();
-			System.out.print(current + ",");
-
-			if(current.getRight() != null)
-				stack.push(current.getRight());
+			current = stack1.pop();
+			stack2.push(current);
 
 			if(current.getLeft() != null)
-				stack.push(current.getLeft());
+				stack1.push(current.getLeft());
+
+			if(current.getRight() != null)
+				stack1.push(current.getRight());
+
+		}
+		
+		while(!stack2.isEmpty()) {
+			current = stack2.pop();
+			System.out.print(current + ",");
 		}
 	}
 
@@ -35,10 +42,10 @@ public class PreOrderIterative {
 		BinaryTree binaryTree = BinaryTreeFactory.getSevenNodesPerfectBinaryTree();
 		System.out.println();
 		System.out.println("Iterative");
-		preorderIterative(binaryTree.getRoot());
+		postorderIterative(binaryTree.getRoot());
 		System.out.println();
 		System.out.println("Recursive");
-		binaryTree.preorder();
+		binaryTree.postorder();
 	}
 
 }

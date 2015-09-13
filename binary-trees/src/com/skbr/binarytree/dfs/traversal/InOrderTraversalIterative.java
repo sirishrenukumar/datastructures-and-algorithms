@@ -6,7 +6,7 @@ import com.skbr.binarysearchtree.BinarySearchTree;
 import com.skbr.binarysearchtree.BinarySearchTree.Node;
 import com.skbr.binarysearchtree.BinarySearchTreeFactory;
 
-public class InOrderIterative {
+public class InOrderTraversalIterative {
 	
 	private static void inorderIterative(Node root) {
 		
