@@ -29,6 +29,10 @@ public class BinaryTree {
 			return right;
 		}
 		
+		public boolean isLeaf() {
+			return left == null && right == null;
+		}
+		
 		
 	}
 
