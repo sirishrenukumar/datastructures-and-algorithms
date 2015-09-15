@@ -46,13 +46,13 @@ public class BinaryTree {
 		return root;
 	}
 
-	Node insertLeft(Node root, int data) {
+	public Node insertLeft(Node root, int data) {
 		Node node = new Node(data);
 		root.left = node;
 		return node;
 	}
 
-	Node insertRight(Node root, int data) {
+	public Node insertRight(Node root, int data) {
 		Node node = new Node(data);
 		root.right = node;
 		return node;
