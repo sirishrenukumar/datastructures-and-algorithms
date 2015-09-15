@@ -8,6 +8,42 @@ import com.skbr.binarytree.BinaryTreeFactory;
 
 public class LevelOrderTraversalSeperateLineOuput {
 	
+	private static void levelOrderTraversalUsingTwoQueue(Node root) {
+		
+		if(root == null)
+			return;
+		
+		Queue<Node> queue1 = new LinkedList<Node>();
+		Queue<Node> queue2 = new LinkedList<Node>();
+		
+		queue1.offer(root);
+		while(!queue1.isEmpty() || !queue2.isEmpty()) {
+			
+			while(!queue1.isEmpty()) {
+				Node current = queue1.poll();
+				System.out.print(current);
+				
+				if(current.getLeft()!= null)
+					queue2.offer(current.getLeft());
+				if(current.getRight()!= null)
+					queue2.offer(current.getRight());
+			}
+			System.out.println();
+
+			while(!queue2.isEmpty()) {
+				Node current = queue2.poll();
+				System.out.print(current);
+				
+				if(current.getLeft()!= null)
+					queue1.offer(current.getLeft());
+				if(current.getRight()!= null)
+					queue1.offer(current.getRight());
+			}
+			System.out.println();
+			
+		}
+		
+	}
 	private static void levelOrderTraversal(Node root) {
 		
 		Queue<Node> queue = new LinkedList<Node>();
@@ -25,7 +61,7 @@ public class LevelOrderTraversalSeperateLineOuput {
 			while(nodeCount > 0) {
 				Node current = queue.remove();
 				
-				System.out.print(current + "->");
+				System.out.print(current);
 				
 				/*
 				 * Add the left child of the current node if present
@@ -58,6 +94,8 @@ public class LevelOrderTraversalSeperateLineOuput {
 		System.out.println("");
 		System.out.println("15-node perfect");
 		levelOrderTraversal(BinaryTreeFactory.getPerfectBinaryTree().getRoot());
+		
+		levelOrderTraversalUsingTwoQueue(BinaryTreeFactory.getPerfectBinaryTree().getRoot());
 
 	}
 
