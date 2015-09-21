@@ -113,6 +113,9 @@ public class BoundaryTraversalCounterClockwise {
 			if(root == null)
 				return;
 
+			/*
+			 * Print the leaves from left to right 
+			 */
 			partialInorder(root.getLeft());
 			/*
 			 * Print only the leaves. 

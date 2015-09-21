@@ -113,14 +113,18 @@ public class BoundaryTraversalClockwise {
 			if(root == null)
 				return;
 
-			partialInorder(root.getLeft());
+			/*
+			 * Print the leaves from right to left 
+			 */
+			partialInorder(root.getRight());
+			
 			/*
 			 * Print only the leaves. 
 			 */
 			if(root.isLeaf())
 				System.out.print(root + " ");
-			partialInorder(root.getRight());
 			
+			partialInorder(root.getLeft());
 		}
 		private void partialPostOrder(Node root) {
 			if(root == null)
