@@ -122,6 +122,15 @@ public class AllLeavesAtSameLevel {
 		System.out.println();
 		System.out.println("All leaves on same level : " + allLeavesAtSameLevel(binaryTreeNode));
 		
+		System.out.println();
+		System.out.println("All leaves on same level : " + allLeavesAtSameLevel(binaryTreeNode));
+
+		binaryTreeNode.left.left.left = new BinaryTreeNode(7);
+		
+		levelOrder(binaryTreeNode);
+
+		System.out.println();
+		System.out.println("All leaves on same level : " + allLeavesAtSameLevel(binaryTreeNode));
 	}
 
 }

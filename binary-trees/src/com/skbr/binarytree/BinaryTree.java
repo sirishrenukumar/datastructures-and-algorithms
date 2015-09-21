@@ -1,5 +1,8 @@
 package com.skbr.binarytree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree {
 
 	public static class Node {
@@ -121,6 +124,29 @@ public class BinaryTree {
 		if(root.left == null && root.right == null)
 			return 1;
 		return Math.max(getHeight(root.left), getHeight(root.right)) + 1;
+	}
+	
+	public void levelorder() {
+		if(root == null)
+			return;
+		Queue<Node> queue = new LinkedList<Node>();
+		queue.offer(root);
+		queue.offer(null);
+		while(!queue.isEmpty()) {
+			Node current = queue.poll();
+			if(current != null) {
+				System.out.print(current + ",");
+				if(current.left != null)
+					queue.offer(current.left);
+				if(current.right != null)
+					queue.offer(current.right);
+			} else {
+				if(!queue.isEmpty()) {
+					System.out.println();
+					queue.offer(null);
+				}
+			}
+		}
 	}
 
 	public void printAllRootToLeafPaths() {
