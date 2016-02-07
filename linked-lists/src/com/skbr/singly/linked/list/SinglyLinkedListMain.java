@@ -46,6 +46,9 @@ public class SinglyLinkedListMain {
 		System.out.println("Reverse again");
 		singlyLinkedList3.reverse();
 		System.out.println(singlyLinkedList3);
+		System.out.println("Reverse again recursively");
+		singlyLinkedList3.reverseRecursive();
+		System.out.println(singlyLinkedList3);
 
 		System.out.println("Rotate anti clockwise by 3");
 		singlyLinkedList3.rotateAntiClockwise(3);

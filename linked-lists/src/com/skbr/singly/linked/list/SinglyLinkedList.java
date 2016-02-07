@@ -1,6 +1,6 @@
 package com.skbr.singly.linked.list;
 
-import java.sql.PreparedStatement;
+import com.sun.org.apache.regexp.internal.recompile;
 
 public class SinglyLinkedList {
 
@@ -307,6 +307,21 @@ public class SinglyLinkedList {
 	public void reverseNodesInGroup(int groupSize) {
 
 		// TODO
+	}
+	
+	public void reverseRecursive() {
+		
+		head = reverseRecursive(null, head);
+	}
+	private Node reverseRecursive(Node previous, Node current) {
+		
+		if(current == null || current.next == null)
+			return current;
+		
+		Node next = current.next;
+		current.next = previous;
+		
+		return reverseRecursive(current, next);
 	}
 
 	public void rotateAntiClockwise(int steps) {
